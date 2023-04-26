@@ -16,8 +16,18 @@ if [[ ! -d "/qmk/${QMK_BRANCH}" ]]; then
   qmk setup
 fi
 
+#change elitec to the promicro in custom keymap 
+echo ${CUSTOM_KEYMAP}
+
+sed -i  's/bastardkb\/scylla\/v2\/elitec/bastardkb\/scylla\/v2\/promicro/g' ${CUSTOM_KEYMAP}
+
+echo "replace promicro with elitc done"
+
+qmk import-keymap ${CUSTOM_KEYMAP}
+
 # copy always keyboard configurations
 cp -r /keyboards/* /qmk/${QMK_BRANCH}/keyboards/
+
 
 # add right handedness to config
 echo "#define MASTER_RIGHT" >> /qmk/${QMK_BRANCH}/keyboards/${KEYBOARD}/config.h
