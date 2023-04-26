@@ -25,3 +25,6 @@ Then you can just execute the "build-firmware.sh" with new keymap;
 ```
 bash build-firmware.sh 0.20.5 bastardkb/scylla/v2/promicro new-keymap-folder
 ```
+
+
+This repository preapared by Sinior Software Architechtuer Emre Başkale 
